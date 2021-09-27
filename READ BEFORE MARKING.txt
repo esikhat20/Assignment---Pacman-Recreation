@@ -1,0 +1,30 @@
+To whoever is marking this, please note that I am aware of the following minor issues:
+
+1. As per the assessment specifications, I created 4 branches (Master, Development, 
+Feature-Visual and Feature-LevelGenerator), however, I did not contribute anything to the 
+Feature-LevelGenerator branch. I believe that I have completed the 90% section which has all
+taken place within the Feature-Visual branch. Since I created all the branches from the
+beginning, I believe this is the reason why the Feature-LevelGenerator branch is empty and
+does not resemble the Feature-Visual branch. If you are able to use Git Bash, then the
+command "gitk" will show you that these branches have been created in this manner.
+
+2. Due to the assessment specifications, only 1 animation controller for the pacman sprite
+has been used for all animations. Inside the level, I have 2 pacman sprites, 1 for displaying
+movement and the other specifically for the death state animation. In order to keep with the
+specification, once the play button is hit, the movement sprite will move right and suddenly
+transition into the death animation before transitioning into the normal movement animations.
+This only happens in this scenario and the movement sprite continues the expected behaviour
+afterwards. I am not sure if this will result in the deduction of marks as it is not perfect.
+However, for the final assessment, the death animation will only be played when necessary
+and not for demonstration purposes.
+
+3. The normal pellet sprite may look like it does not appear in the scene and game views,
+however, this is due to the darker shades partially blending with the background.
+
+4. The audio source for pacman's walking audio is a component of the pacman game object and
+not a separate game object like the other audio sources. This results in a "speaker" icon
+covering the sprite. This can be toggled off through the Gizmos tab if needed.
+
+
+Thank you for taking the time to read through this brief.
+-Ethan Tran (14177911)
