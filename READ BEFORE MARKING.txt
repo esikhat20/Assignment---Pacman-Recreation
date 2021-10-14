@@ -1,4 +1,6 @@
 To whoever is marking this, please note that I am aware of the following minor issues:
+===========================================================================================
+Assignment 3:
 
 1. As per the assessment specifications, I created 4 branches (Master, Development, 
 Feature-Visual and Feature-LevelGenerator), however, I did not contribute anything to the 
@@ -24,7 +26,9 @@ however, this is due to the darker shades partially blending with the background
 4. The audio source for pacman's walking audio is a component of the pacman game object and
 not a separate game object like the other audio sources. This results in a "speaker" icon
 covering the sprite. This can be toggled off through the Gizmos tab if needed.
+==========================================================================================
+Assignment 4: 
 
-
+==========================================================================================
 Thank you for taking the time to read through this brief.
 -Ethan Tran (14177911)
