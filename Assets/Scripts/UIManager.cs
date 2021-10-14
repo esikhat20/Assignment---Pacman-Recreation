@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -21,10 +22,18 @@ public class UIManager : MonoBehaviour
     public void LoadLevel1() {
         DontDestroyOnLoad(gameObject);
         SceneManager.LoadScene(1);
-        // SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        
+        if (scene.buildIndex == 1) {
+            Button exitButton = GameObject.Find("HUD/Exit Button").GetComponent<Button>();
+            exitButton.onClick.AddListener(ExitGame);
+        }
+    }
+
+    public void ExitGame() {
+        // UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene(0);
     }
 }
