@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PacMovement : MonoBehaviour
+public class PacStudentController : MonoBehaviour
 {
 
     [SerializeField]
