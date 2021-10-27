@@ -5,6 +5,7 @@ public class PacStudentController : MonoBehaviour
 
     [SerializeField]
     private GameObject Obj;
+    private ParticleSystem dust;
     private Tween activeTween;
     private Animator anim;
     private AudioSource pacAudioSource;
@@ -18,6 +19,7 @@ public class PacStudentController : MonoBehaviour
     {
         anim = gameObject.GetComponent<Animator>();
         pacAudioSource = gameObject.GetComponent<AudioSource>();
+        dust = gameObject.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -30,12 +32,14 @@ public class PacStudentController : MonoBehaviour
             currentInput = lastInput;
             anim.speed = 1;
             pacAudioSource.UnPause();
+            dust.Play();
             addTween();
         }
         // else stop animation and walking sound
         else {
             anim.speed = 0;
             pacAudioSource.Pause();
+            dust.Stop();
         }
 
         if (activeTween != null) {
@@ -127,6 +131,8 @@ public class PacStudentController : MonoBehaviour
     public bool RaycastCheck() {
         
         // Casts a ray straight up, left, down or right
+        // Using a 2D Raycast is slightly different to a 3D Raycast
+        // For this assessment, I am passing in the paramaters of pacman's position, direction of the ray, and distance of the ray
         RaycastHit2D hitUp = Physics2D.Raycast(transform.position, Vector2.up, 1.0f);
         RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, Vector2.left, 1.0f);
         RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, 1.0f);
@@ -134,30 +140,32 @@ public class PacStudentController : MonoBehaviour
 
         bool wasHit = false;
         
+        // Switch statement for if pacman's facing direction will hit a wall. Returned boolean wasHit indicates whether the ray
+        // hit a wall in a specified direction
         switch (lastInput) {
 
             case "W":
                 if (hitUp.collider != null) {
-                    return true;
+                    wasHit = true;
                 }
                 break;
             
             case "A":
                 if (hitLeft.collider != null) {
-                    return true;
+                    wasHit = true;
                 }
                 break;
             
             case "S":
                 
                 if (hitDown.collider != null) {
-                    return true;
+                    wasHit = true;
                 }
                 break;
 
             case "D":
                 if (hitRight.collider != null) {
-                    return true;
+                    wasHit = true;
                 }
                 break;
         }//end switch
