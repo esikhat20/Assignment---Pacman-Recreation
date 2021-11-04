@@ -27,7 +27,7 @@ however, this is due to the darker shades partially blending with the background
 not a separate game object like the other audio sources. This results in a "speaker" icon
 covering the sprite. This can be toggled off through the Gizmos tab if needed.
 ==========================================================================================
-Assignment 4: 
+Assignment 4 (Finished 70% section): 
 
 ==========================================================================================
 Thank you for taking the time to read through this brief.

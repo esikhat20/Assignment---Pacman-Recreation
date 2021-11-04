@@ -11,8 +11,7 @@ public class PacStudentController : MonoBehaviour
     private AudioSource pacAudioSource;
     private string lastInput;
     private string currentInput;
-    private float distance;
-    
+    private float distance;  
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +19,7 @@ public class PacStudentController : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         pacAudioSource = gameObject.GetComponent<AudioSource>();
         dust = gameObject.GetComponent<ParticleSystem>();
+      
     }
 
     // Update is called once per frame
@@ -56,7 +56,9 @@ public class PacStudentController : MonoBehaviour
                 activeTween.Target.position = activeTween.EndPos;
                 activeTween = null;
             }
-        }        
+        }  
+
+        
 
     }//end Update()
 
@@ -171,5 +173,7 @@ public class PacStudentController : MonoBehaviour
         }//end switch
         return wasHit;
     }//end RaycastCheck()
+
+    
 
 }//end class
